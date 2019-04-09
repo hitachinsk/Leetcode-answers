@@ -54,16 +54,6 @@ class LinkList:
             p = self.head
             self.head = self.head.next
             p.next = None
-            
-    def __len__(self):
-        ret = 0
-        p = self.head
-        if p == None:
-            return 0
-        while p != None:
-            ret += 1
-            p = p.next
-        return ret
         
         
 class LRUCache:
@@ -71,6 +61,7 @@ class LRUCache:
     def __init__(self, capacity: int):
         self.capacity = capacity
         self.link = LinkList()
+        self.length = 0
 
     def get(self, key: int) -> int:
         p = self.link.head
@@ -105,14 +96,17 @@ class LRUCache:
             return
         if p == None:
             self.link.append(key, value)
+            self.length += 1
             return
         if p.next == None:
             if p.key == key:
                 p.val = value
             else:
-                if len(self.link) == self.capacity:
+                if self.length == self.capacity:
                     self.link.delete()
+                    self.length -= 1
                 self.link.append(key, value)
+                self.length += 1
             return
         if p.key == key:
             p.val = value
@@ -134,11 +128,12 @@ class LRUCache:
                 pointer.next = None
                 return
             p = p.next
-        if len(self.link) == self.capacity:
+        if self.length == self.capacity:
             self.link.delete()
+            self.length -= 1
         self.link.append(key, value)
+        self.length += 1
         
-
 
 # Your LRUCache object will be instantiated and called as such:
 # obj = LRUCache(capacity)
