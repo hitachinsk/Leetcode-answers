@@ -8,3 +8,7 @@ I will record the answers and ideas of instances from Leetcode with this reposit
 * [Layer Traverse](https://github.com/hitachinsk/Leetcode-answers/tree/master/Layer%20Traverse)
 * [Stack](https://github.com/hitachinsk/Leetcode-answers/tree/master/Stack/)
 * [Word Frequency](https://github.com/hitachinsk/Leetcode-answers/tree/master/Word%20Frequency)
+* [BST](https://github.com/hitachinsk/Leetcode-answers/tree/master/BST)
+* [Competition](https://github.com/hitachinsk/Leetcode-answers/tree/master/Competition)
+* [LinkedList](https://github.com/hitachinsk/Leetcode-answers/tree/master/LinkedList)
+* [greedy](https://github.com/hitachinsk/Leetcode-answers/tree/master/greedy)
